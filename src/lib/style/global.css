@@ -1,26 +1,102 @@
-body {
-	background-color: #0b182a;
-	font-family: Metropolis, sans-serif;
-  }
+/* Poppins font import */
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
 
-  @font-face {
-	font-family: 'Metropolis';
-	src: url('../fonts/Metropolis-Bold.otf') format('opentype');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-  }
-  @font-face {
-	font-family: 'Metropolis';
-	src: url('../fonts/Metropolis-Regular.otf') format('opentype');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-  }
-  @font-face {
-	font-family: 'Metropolis';
-	src: url('../fonts/Metropolis-SemiBold.otf') format('opentype');
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
-  }
+:root {
+	font-family: 'Poppins', Arial, -apple-system, 'Helvetica Neue', sans-serif;
+}
+
+.poppins {
+	font-family: 'Poppins';
+}
+
+/* Global scroll gutter to prevent page from jumping */
+html {
+	overflow-y: scroll;
+}
+
+@supports (scrollbar-gutter: stable) {
+	html {
+		overflow-y: auto;
+		scrollbar-gutter: stable;
+	}
+}
+
+body {
+	--at-apply: dark:bg-slate-900 text-slate-700 dark:text-slate-400;
+}
+
+.app {
+	/* Global padding for navigation space */
+	--at-apply: flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900;
+}
+
+/* Global page-wrapper, rest is done by tailwind */
+.xl-container {
+	--at-apply: flex w-full flex-1 px-4 transition-all duration-200 xl:max-w-[1280px] mx-auto;
+}
+.m-container {
+	--at-apply: flex w-full flex-1 px-4 transition-all duration-200 md:max-w-[768px] mx-auto;
+}
+
+/* Global hover effect */
+.hover {
+	--at-apply: transition-opacity duration-200 hover:opacity-80;
+}
+
+/* Global pulse loading placeholder */
+.ghost {
+	--at-apply: absolute z-0 aspect-square h-full w-full animate-pulse bg-slate-100 dark:bg-slate-800;
+}
+
+/* Global classes tags */
+.tag-wrapper {
+	--at-apply: flex gap-2 flex-wrap;
+}
+.tag {
+	--at-apply: h-7 bg-slate-200 dark:(bg-slate-800) flex items-center align-center px-3 text-xs rounded-full shrink-0;
+}
+.tag.selected {
+	--at-apply: bg-blue-500 text-white;
+}
+
+/* Global input Search icon */
+.input-ico {
+	--at-apply: absolute top-[21px] right-[16px] flex items-center justify-center w-5 h-5 transition-color duration-200 transition-opacity;
+}
+
+/* Global input invalid state */
+.form-sent input {
+	--at-apply: invalid:(focus:border-red-600 focus:ring-red-600) focus:invalid:border-red-500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	--at-apply: text-slate-700 font-bold dark:text-slate-200;
+}
+
+h1 {
+	--at-apply: text-6xl font-bold; 
+}
+
+h2 {
+	--at-apply: text-5xl;
+}
+
+h3 {
+	--at-apply: text-4xl;
+}
+
+h4 {
+	--at-apply: text-3xl;
+}
+
+h5 {
+	--at-apply: text-2xl;
+}

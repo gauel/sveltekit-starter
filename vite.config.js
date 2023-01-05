@@ -1,6 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import UnoCSS from 'unocss/vite'
-import Icons from 'unplugin-icons/vite'
+import UnoCSS from 'unocss/vite';
+import Icons from 'unplugin-icons/vite';
 
 /** @type {import('vite').UserConfig} */
 const config = {
@@ -12,7 +12,7 @@ const config = {
 			}
 		}),
 		Icons({
-			compiler: 'svelte',
+			compiler: 'svelte'
 		})
 	],
 	test: {
